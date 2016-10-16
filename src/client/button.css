@@ -33,18 +33,6 @@
   outline: rgb(255, 255, 255) none 0px;
 }
 
-.holosmallbtn:not(.inactive):hover>.holosmallbtn-top,
-.holosmallbtn:not(.inactive).active>.holosmallbtn-top {
-  transform: translate(16px, 0);
-  transition-delay: 0.2s;
-  color: white;
-}
-
-.holosmallbtn:not(.inactive):hover>.holosmallbtn-bottom,
-.holosmallbtn:not(.inactive).active>.holosmallbtn-bottom {
-  transform: translate(11px, -8px)
-}
-
 .holosmallbtn.inactive {
   opacity: 0.5;
   cursor: default;
@@ -118,16 +106,38 @@
   cursor: default
 }
 
-.holosmallbtn:hover:not(.inactive)>.holosmallbtn-top,
+/*.holosmallbtn:not(.inactive):hover>.holosmallbtn-top,
+.holosmallbtn:not(.inactive).active>.holosmallbtn-top {
+  transform: translate(16px, 0);
+  transition-delay: 0.2s;
+  color: white;
+}*/
+
+.holosmallbtn:not(.inactive):hover>.holosmallbtn-bottom,
+.holosmallbtn:not(.inactive).active>.holosmallbtn-bottom {
+  /*100% { transform: translate(11px, -8px) }*/
+  animation-name: buttonMove;
+}
+
+/*.holosmallbtn:hover:not(.inactive)>.holosmallbtn-top,
 .holosmallbtn.active:not(.inactive)>.holosmallbtn-top {
   transform: translate(16px, 0);
   transition-delay: 0.2s;
   color: white;
-}
+}*/
 
-.holosmallbtn:hover:not(.inactive)>.holosmallbtn-bottom,
+/*.holosmallbtn:hover:not(.inactive)>.holosmallbtn-bottom,
 .holosmallbtn.active:not(.inactive)>.holosmallbtn-bottom {
-  transform: translate(11px, -8px)
+  transform-origin: 0 0;
+  animation-name: buttonMove;
+}*/
+
+@keyframes buttonMove {
+  0% { transform: translate(11px, -8px) }
+  /*100% { transform: translate(11px, -8px) }*/
+
+  /*0% { transform: scaleX(0) };
+  100% { transform: scaleX(100%) };*/
 }
 
 .holosmallbtn .holosmallbtn-top {
