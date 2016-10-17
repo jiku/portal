@@ -28,7 +28,8 @@
     "react-chartjs": "^0.8.0",
     "react-dom": "^15.0.1",
     "react-komposer": "^1.13.1",
-    "react-loading": "0.0.9"
+    "react-loading": "0.0.9",
+    "styled-components": "^1.0.5"
   },
   "devDependencies": {
     "casual": "^1.5.2"
