@@ -4,9 +4,9 @@ Base site for `jiku` (apps).
 
 ## STATE
 
-### 2016-10-16 15:25
+### 2016-10-17 ~01:00
 
-Idea is to see if you can use named animations with keyframes, etc, with normal CSS styles. Then maybe those could be ported to inline styles (for React, JS).
+Replaces button `CSS` with `styled-components`.
 
 ### 2016-10-14 11:02
 
