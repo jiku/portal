@@ -4,6 +4,16 @@ Base site for `jiku` (apps).
 
 ## STATE
 
+### Using Meteor edge (2016-10-19 00:50)
+
+`bump` updates so `start` can be used. `start:edge` doesn't.
+Find a way to use vars and reuse nested scripts in `package.json`, etc (so current becomes arg for last, etc)?
+
+### TODO (2016-10-17)
+
+Replace button PNG with SVG.
+See
+
 ### 2016-10-17 ~01:00
 
 Replaces button `CSS` with `styled-components`.
