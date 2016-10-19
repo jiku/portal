@@ -8,32 +8,15 @@
     "edit": "atom-beta ."
   },
   "dependencies": {
-    "apollo-client": "^0.4.13",
-    "apollo-server": "^0.2.8",
-    "bcrypt": "^0.8.7",
-    "body-parser": "^1.15.2",
-    "casual": "^1.5.2",
-    "chart.js": "^1.1.1",
-    "classnames": "^2.2.5",
-    "express": "^4.14.0",
-    "graphql": "^0.7.0",
-    "graphql-tag": "^0.1.9",
-    "graphql-tools": "^0.6.4",
-    "graphql-typings": "0.0.1-beta-2",
-    "invariant": "^2.2.1",
-    "markdown-to-react-components": "^0.2.1",
     "meteor-node-stubs": "~0.2.0",
-    "ramda": "^0.21.0",
     "react": "^15.0.1",
-    "react-addons-pure-render-mixin": "^15.0.1",
-    "react-apollo": "^0.5.1",
-    "react-chartjs": "^0.8.0",
     "react-dom": "^15.0.1",
-    "react-komposer": "^1.13.1",
+    "ramda": "^0.22.1",
+    "markdown-to-react-components": "^0.2.1",
     "react-loading": "0.0.9",
-    "styled-components": "^1.0.5"
+    "styled-components": "^1.0.8"
   },
   "devDependencies": {
-    "casual": "^1.5.2"
+    "classnames": "^2.2.5"
   }
 }

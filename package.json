@@ -32,10 +32,8 @@
     },
     "dependencies": {
         "babel-runtime": "^6.9.2",
-        "chart.js": "^1.1.1",
         "ramda": "^0.21.0",
         "react": "^15.2.0",
-        "react-chartjs": "^0.8.0",
         "react-dom": "^15.2.0"
     },
     "devDependencies": {

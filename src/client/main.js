@@ -4,15 +4,6 @@ import ReactDOM from 'react-dom'
 import R from 'ramda'
 import App from '../imports/src/components/app'
 
-import ApolloClient from 'apollo-client'
-import { meteorClientConfig } from 'meteor/apollo'
-import { ApolloProvider } from 'react-apollo'
-
-import App2 from '/imports/ui/App'
-
-import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
-
 const MarkdownFile = async (filename) => {
   let d = await new Promise((resolve, reject) => {
     try {
@@ -72,15 +63,6 @@ let appState = {
 }
 
 const setup = async () => {
-  // const client = new ApolloClient(meteorClientConfig());
-  //
-  // ReactDOM.render(
-  //   <ApolloProvider client={client}>
-  //     <App2 />
-  //   </ApolloProvider>,
-  //   rootEl
-  // )
-
   const render = appState => App.render(document.getElementById('app'), appState)
 
   render(appState)
