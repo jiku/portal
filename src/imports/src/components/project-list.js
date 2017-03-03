@@ -4,6 +4,8 @@ import Button from './button'
 
 const Container = children => (<div className="panel panel-default">
   <div className="panel-body">
+  </div>
+  <div className="panel-body">
     {children}
   </div>
 </div>)
