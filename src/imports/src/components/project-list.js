@@ -12,10 +12,11 @@ const List = children => (<div>
   {children}
 </div>)
 
-const ListItem = ({ id, image, name, description, url }) => (<div key={id}>
-  <div><a href={url}>{image}</a></div>
+const ListItem = ({ id, image, name, description, url, tags }) => (<div key={id}>
+  {/*<div><a href={url}>{image}</a></div>*/}
   <Button props={{name, url}} />
   <div>{description}</div>
+  <div className="tags">{tags}</div>
 </div>)
 
 const ProjectList = R.compose(Container, List, R.map(ListItem), R.prop('projects'))
