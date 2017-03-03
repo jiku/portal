@@ -8,9 +8,10 @@ const App = appState => {
   return (<div className="container">
     <h1>jiku</h1>
 
+    <Parser markdown={appState.markdown} />
+
     <h2>Projects</h2>
     <ProjectList projects={appState.projects} />
-    <Parser markdown={appState.markdown} />
   </div>)
 }
 
