@@ -1,3 +1,4 @@
+.DS_Store
 .imdone/
 node_modules/
 **/*.log
