@@ -67,3 +67,7 @@ h2 {
 #login-dropdown-list {
   position: relative;
 }
+
+.tags {
+  font-size: 8px;
+}
