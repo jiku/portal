@@ -1,8 +1,8 @@
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 
-const getMarkdownFile = async (filename) => {
+const getFile = async (filename) => {
   const file = await new Promise((resolve) => {
-    resolve(Assets.getText(`${filename}.md`))
+    resolve(Assets.getText(`${filename}`))
   })
   console.log('Taking a break...')
   await sleep(5000)
@@ -11,10 +11,10 @@ const getMarkdownFile = async (filename) => {
 }
 
 Meteor.methods({
-  async 'markdown.get.async'(data) {
+  async 'file.get.async'(data) {
     // const a = await someAsyncFunction()
     // return await someOtherAsyncFunction(a)
-    return await getMarkdownFile(data.filename)
+    return await getFile(data.filename)
   },
   'svg.get'(data) {
     return Assets.getText(data.path)

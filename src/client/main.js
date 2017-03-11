@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom'
 import R from 'ramda'
 import App from '../imports/src/components/app'
 
-const MarkdownFile = async (filename) => {
+const File = async (filename) => {
   let d = await new Promise((resolve, reject) => {
     try {
-      Meteor.call('markdown.get.async', { filename }, (err, res) => {
+      Meteor.call('file.get.async', { filename }, (err, res) => {
         if (err) reject('Something went wrong')
         resolve(res)
       })
@@ -16,15 +16,6 @@ const MarkdownFile = async (filename) => {
     }
   })
   return await d
-}
-
-const getSVG = async (path) => {
-  return await new Promise((resolve, reject) => {
-    Meteor.call('svg.get', { path }, (err, res) => {
-      if (err) reject('Something went wrong')
-      resolve(res)
-    })
-  })
 }
 
 let appState = {
@@ -142,9 +133,11 @@ const setup = async () => {
   //   render(appState)
   // }, 1000)
 
-  appState.markdown = await MarkdownFile('Sweetie')
+  appState.markdown = await File('Sweetie.md')
+
   render(appState)
-  // const SVG = await getSVG('rocket.svg')
+  const SVG = await File('rocket.svg')
+  console.log(SVG)
 }
 
 Meteor.startup(() => {
