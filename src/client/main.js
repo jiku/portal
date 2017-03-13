@@ -39,6 +39,17 @@ const setup = async () => {
   //   render(appState)
   // }, 1000)
 
+  const Projects = await File('Projects.js')
+  // appState.projects = await import Projects from '/private/Projects' // File('Projects.js')
+  // const Projects = await import("../private/Projects.js");
+  // const Projects = await require("/private/Products.js")
+  function notCalled() {
+    import("Projects")
+  }
+
+  appState.projects = import("Projects");
+  console.log("projects are", appState.projects)
+
   appState.markdown = await File('Sweetie.md')
 
   render(appState)
