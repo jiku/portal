@@ -39,6 +39,7 @@ const setup = async () => {
   //   render(appState)
   // }, 1000)
 
+  appState.projects = JSON.parse(await File('Projects.json'))
   appState.markdown = await File('Sweetie.md')
 
   render(appState)
