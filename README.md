@@ -4,6 +4,12 @@ Base site for `jiku` (apps).
 
 ## STATE
 
+### Private assets (MD, SVG) but not JS to client (2017-03-12 10:11)
+
+Something weird.
+Can't use dynamic import * from 'module' for something (untracked) in /private?
+Can't use dynamic import(moduleAsVariable) or require(moduleAsVariable) for a variable containing a module? 
+
 ### Using Meteor edge (2016-10-19 00:50)
 
 `bump` updates so `start` can be used. `start:edge` doesn't.
