@@ -33,8 +33,6 @@ let appState = {
 const setup = async () => {
   const render = appState => App.render(document.getElementById('app'), appState)
 
-  render(appState)
-
   // setInterval(() => {
   //   render(appState)
   // }, 1000)
@@ -42,9 +40,10 @@ const setup = async () => {
   appState.projects = JSON.parse(await File('Projects.json'))
   appState.markdown = await File('Sweetie.md')
 
-  render(appState)
   const SVG = await File('rocket.svg')
   console.log(SVG)
+
+  render(appState)
 }
 
 Meteor.startup(() => {
