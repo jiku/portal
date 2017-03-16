@@ -2,11 +2,17 @@ import React from 'react'
 import R from 'ramda'
 import styled from 'styled-components';
 
+
 const Wrapper = styled.div`
-  width: 200px;
-  height: 80px;
-  display: block;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
   position: relative;
+  width: auto;
+  height: auto;
+  padding: 3em 3em 1em 3em;
+
+  cursor: pointer;
 
   &.inactive {
     opacity: 0.5;
@@ -14,78 +20,84 @@ const Wrapper = styled.div`
   }
 `;
 
-const Top = styled.span`
-  background-position: 50% -10px;
-  bottom: -12px;
-  cursor: pointer;
-  display: block;
-  height: 50px;
-  justify-self: stretch;
-  left: 0px;
-  position: absolute;
-  right: 0px;
+const Text = styled.span`
+  z-index: 3;
   text-align: center;
-  text-decoration: none solid rgb(0, 247, 255);
-  text-shadow: rgb(0, 0, 0) 1px 2px 0px;
+  text-shadow: rgba(0, 0, 0, .3) 0 0 .05em;
   text-size-adjust: 100%;
   text-transform: uppercase;
-  top: 0px;
-  width: 200px;
-  z-index: 2;
-  column-rule-color: rgb(0, 247, 255);
+  // font: 1em 'jikutypeVector';
+  // font: 1em stage01;
+  font: 1em Electrolize;
+  transition: all 0.2s ease 0s;
+
   perspective: 1000px;
   perspective-origin: 100px 46px;
   transform-origin: 100px 46px;
-  background: rgba(0, 0, 0, 0) url("/halo-add-cart-btn.png") no-repeat scroll 50% -10px / auto padding-box border-box;
-  border: 0px none rgb(0, 247, 255);
-  font: normal normal normal normal 12px / 16.8px Electrolize;
-  outline: rgb(0, 247, 255) none 0px;
-  padding: 42px 0px 0px;
-  transition: all 0.2s ease 0s;
 
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
   transform-origin: 0 0;
   :hover:not(.inactive) > &, .active:not(.inactive) > & {
-    color: #fff;
-    transform: translate(16px, 0);
-    transition-delay: 0.2s;
+    color: #ff7;
+    text-shadow: rgba(0, 0, 0, 1) 0 0 .05em;
+    transform: translate(0, -9px);
+    transition-delay: 0.1s;
   }
 
-  font-family: 'Electrolize', Arial, Helvetica, sans-serif;
-  color: #00f7ff;
-  font-size: 12px;
+  color: #fff;
+
+`;
+
+const Top = styled.span`
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+
+  :hover:not(.inactive) > &, .active:not(.inactive) > & {
+    transform: translate(0, -8px);
+  }
 `;
 
 const Bottom = styled.span`
-  background-position: 50% -110px;
-  bottom: -8px;
-  cursor: pointer;
-  display: block;
-  height: 80px;
-  justify-self: stretch;
-  left: 5px;
   position: absolute;
-  right: -5px;
-  text-decoration: none solid rgb(255, 255, 255);
-  text-size-adjust: 100%;
-  top: 8px;
-  width: 200px;
+  width: 100%;
   z-index: 1;
-  column-rule-color: rgb(255, 255, 255);
+
   perspective: 1000px;
   perspective-origin: 100px 40px;
   transform-origin: 100px 40px;
-  background: rgba(0, 0, 0, 0) url("/halo-add-cart-btn.png") no-repeat scroll 50% -110px / auto padding-box border-box;
-  border: 0px none rgb(255, 255, 255);
-  font: normal normal normal normal 12px / 16.8px Electrolize;
-  outline: rgb(255, 255, 255) none 0px;
   transition: all 0.2s ease 0s;
 
   :hover:not(.inactive) > &, .active:not(.inactive) > & {
     transform: translate(11px, -8px);
   }
+`;
+
+const StyleTopSVG = styled.g`
+  fill-opacity: 0.3;
+  fill: #eee;
+  fill-rule: nonzero;
+  stroke-opacity: 0.6;
+  stroke: #777;
+  stroke-width: 1;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 10;
+  stroke-dashoffset: 0;
+  mix-blend-mode: normal;
+`;
+
+const StyleBottomSVG = styled.g`
+  fill-opacity: 0.1;
+  fill: #777;
+  fill-rule: nonzero;
+  stroke-opacity: 0.3;
+  stroke: #333;
+  stroke-width: 1;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 10;
+  stroke-dashoffset: 0;
+  mix-blend-mode: normal;
 `;
 
 const Container = children => (<div className="panel panel-default">
@@ -94,16 +106,47 @@ const Container = children => (<div className="panel panel-default">
   </div>
 </div>)
 
-const Button = props => {
+/*
+const Button = ({name, url, button}) => {
+    console.log(name, url, button)
   return (<div>
-    <a href={props.url}>
-    <Wrapper>
-      <Top>{ props.name }</Top>
-      <Bottom />
-    </Wrapper>
-    </a>
+    <a href={url}>{name}</a>
+    {button}
   </div>)
 }
+*/
+
+const TopSVG = () => (
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-500,-100,1000,200">
+    <StyleTopSVG>
+      <path d="M-306.4,-95.2c3.2,-2.4 10.4,-4.8 14.4,-4.8l784,0c4,0 8,4 8,8l0,34c0,4 -3.2,10.4 -6.4,12.8l-187.2,140.4c-3.2,2.4 -10.4,4.8 -14.4,4.8l-784,0c-4,0 -8,-4 -8,-8l0,-34c0,-4 3.2,-10.4 6.4,-12.8z" />
+    </StyleTopSVG>
+  </svg>
+)
+
+const BottomSVG = () => (
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-500,-100,1000,200">
+    <StyleBottomSVG>
+      <path d="M-306.4,-95.2c3.2,-2.4 10.4,-4.8 14.4,-4.8l784,0c4,0 8,4 8,8l0,34c0,4 -3.2,10.4 -6.4,12.8l-187.2,140.4c-3.2,2.4 -10.4,4.8 -14.4,4.8l-784,0c-4,0 -8,-4 -8,-8l0,-34c0,-4 3.2,-10.4 6.4,-12.8z" />
+    </StyleBottomSVG>
+  </svg>
+)
+
+const Button = ({ name, url }) => (<div>
+  <a href={url}>
+  <Wrapper>
+    <Text>
+      { name }
+    </Text>
+    <Top>
+      <TopSVG />
+    </Top>
+    <Bottom>
+      <BottomSVG />
+    </Bottom>
+  </Wrapper>
+  </a>
+</div>)
 
 const Parser = R.compose(Container, Button, R.prop('props'))
 
