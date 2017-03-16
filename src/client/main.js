@@ -3,25 +3,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import R from 'ramda'
 import App from '../imports/src/components/app'
-
-const File = async (filename) => {
-  let d = await new Promise((resolve, reject) => {
-    try {
-      Meteor.call('file.get.async', { filename }, (err, res) => {
-        if (err) reject('Something went wrong')
-        resolve(res)
-      })
-    } catch(err) {
-      throw new Meteor.Error(err);
-    }
-  })
-  return await d
-}
+import Asset from '../imports/asset'
 
 let appState = {
-  button: {
-    name: 'Again'
-  },
   parser: {
     loading: {
       state: true
@@ -36,6 +20,9 @@ const setup = async () => {
   // setInterval(() => {
   //   render(appState)
   // }, 1000)
+
+  appState.projects = JSON.parse(await Asset('Projects.json'))
+  appState.markdown = await Asset('Sweetie.md')
 
   appState.projects = JSON.parse(await File('Projects.json'))
   appState.markdown = await File('Sweetie.md')
