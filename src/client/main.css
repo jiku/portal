@@ -4,6 +4,14 @@
         url('jikutype-001-Vector.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'Electrolize';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Electrolize'), local('Electrolize-Regular'), url(https://fonts.gstatic.com/s/electrolize/v5/DDy9sgU2U7S4xAwH5thnJ4gp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 /* Fonts taken from driver.xyz, but would be nice to either tweak them, or find generic similar */
 @font-face {
     font-family: stage01;
