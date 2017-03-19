@@ -27,12 +27,6 @@ const setup = async () => {
 
   appState.markdown = await Asset('Sweetie.md')
 
-  appState.projects = JSON.parse(await File('Projects.json'))
-  appState.markdown = await File('Sweetie.md')
-
-  const SVG = await File('rocket.svg')
-  console.log(SVG)
-
   render(appState)
 }
 
