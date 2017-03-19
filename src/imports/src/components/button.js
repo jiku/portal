@@ -37,7 +37,7 @@ const Text = styled.span`
 
   transform-origin: 0 0;
   :hover:not(.inactive) > &, .active:not(.inactive) > & {
-    color: #ff7;
+    color: #3f9;
     text-shadow: rgba(0, 0, 0, 1) 0 0 .05em;
     transform: translate(0, -9px);
     transition-delay: 0.1s;
