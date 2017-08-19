@@ -32,12 +32,12 @@
     },
     "dependencies": {
         "babel-runtime": "^6.9.2",
-        "ramda": "^0.21.0",
+        "ramda": "^0.22.1",
         "react": "^15.2.0",
         "react-dom": "^15.2.0"
     },
     "devDependencies": {
-        "ava": "^0.16.0",
+        "ava": "^0.17.0",
         "babel-cli": "^6.10.1",
         "babel-core": "^6.10.4",
         "babel-plugin-espower": "^2.3.1",
@@ -45,7 +45,7 @@
         "babel-preset-es2015": "^6.9.0",
         "babel-preset-stage-0": "^6.5.0",
         "babel-preset-react": "^6.11.1",
-        "xo": "^0.15.0",
+        "xo": "^0.17.1",
         "babelify": "^7.3.0",
         "classnames": "^2.2.5",
         "@kadira/storybook": "^2.5.2",
