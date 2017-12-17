@@ -5,7 +5,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Meteor: Chrome",
-            "url": "http://localhost:7007",
+            "url": "http://localhost:6743",
             "webRoot": "${workspaceRoot}/src",
             "sourceMaps": true,
             "userDataDir": "${workspaceRoot}/.vscode/out/chrome",
