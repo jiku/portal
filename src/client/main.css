@@ -69,6 +69,7 @@ h1 {
 
 h2 {
   font-size: 4px;
+  color: rgba(127, 127, 127, 0.5);
 }
 
 #login-dropdown-list {
