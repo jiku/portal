@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Meteor: Chrome",
+            "url": "http://localhost:7007",
+            "webRoot": "${workspaceRoot}/src",
+            "sourceMaps": true,
+            "userDataDir": "${workspaceRoot}/.vscode/out/chrome",
+            // "runtimeExecutable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "protocol": "inspector",
+            "name": "Meteor: Node",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run", "debug"],
+            "port": 9229,
+            "timeout": 30000,
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}/src/",
+            "outFiles": [
+                "${workspaceRoot}/src/.meteor/**/*.js",
+            ]
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Meteor: All",
+            "configurations": ["Meteor: Node", "Meteor: Chrome"]
+        }
+    ]
+}
