@@ -2,8 +2,8 @@
   "private": true,
   "scripts": {
     "start": "meteor --port 6743",
-    "start:edge": "METEOR_WAREHOUSE_URLBASE=https://d3fm2vapipm3k9.cloudfront.net meteor --release=1.4.2-rc.3 --port 6743",
-    "bump": "METEOR_WAREHOUSE_URLBASE=https://d3fm2vapipm3k9.cloudfront.net meteor update --release 1.4.2-rc.3",
+    "start:edge": "METEOR_WAREHOUSE_URLBASE=https://d3fm2vapipm3k9.cloudfront.net meteor --release=1.6.1-beta.18 --port 6743",
+    "bump": "METEOR_WAREHOUSE_URLBASE=https://d3fm2vapipm3k9.cloudfront.net meteor update --release 1.6.1-beta.18",
     "check": "npm-check && ncu",
     "edit": "atom-beta ."
   },
