@@ -8,11 +8,12 @@
     "edit": "atom-beta ."
   },
   "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "markdown-to-react-components": "^0.2.1",
     "meteor-node-stubs": "~0.2.0",
+    "ramda": "^0.22.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
-    "ramda": "^0.22.1",
-    "markdown-to-react-components": "^0.2.1",
     "react-loading": "0.0.9",
     "styled-components": "^1.0.8"
   },
