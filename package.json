@@ -1,93 +1,93 @@
 {
-    "name": "@jiku/portal-site",
-    "version": "0.0.0",
-    "description": "Portal to all jiku content.",
-    "private": true,
-    "author": {
-        "name": "B.E. Henriksen",
-        "email": "e@jiku.ca",
-        "url": "https://jiku.ca"
-    },
-    "main": "dist/index.js",
-    "repository": {
-        "type": "git",
-        "url": "http://github.com/jiku/portal-site.git"
-    },
-    "bugs": {
-        "url": "http://github.com/jiku/portal-site/issues"
-    },
-    "scripts": {
-        "start": "cd src && npm run start",
-        "check": "npm-check && ncu",
-        "edit": "atom-beta .",
-        "test": "npm run test:ava && npm run test:xo",
-        "test:ava": "ava",
-        "test:xo": "xo",
-        "readme": "markdown-cli README.md",
-        "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
-    },
-    "engines": {
-        "node": ">=4.5.0"
-    },
-    "dependencies": {
-        "babel-runtime": "^6.9.2",
-        "ramda": "^0.21.0",
-        "react": "^15.2.0",
-        "react-dom": "^15.2.0"
-    },
-    "devDependencies": {
-        "ava": "^0.16.0",
-        "babel-cli": "^6.10.1",
-        "babel-core": "^6.10.4",
-        "babel-plugin-espower": "^2.3.1",
-        "babel-plugin-transform-runtime": "^6.9.0",
-        "babel-preset-es2015": "^6.9.0",
-        "babel-preset-stage-0": "^6.5.0",
-        "babel-preset-react": "^6.11.1",
-        "xo": "^0.15.0",
-        "babelify": "^7.3.0",
-        "classnames": "^2.2.5",
-        "@kadira/storybook": "^2.5.2",
-        "console.table": "^0.7.0"
-    },
-    "ava": {
-        "files": [
-            "src/**/tests/**/*.js"
-        ],
-        "source": [
-            "data/**/*.json",
-            "src/**/*.js",
-            "!src/**/tests/**/*",
-            "!dist/**/*"
-        ],
-        "require": [
-            "babel-register",
-            "console.table"
-        ],
-        "babel": "inherit"
-    },
-    "babel": {
-        "presets": [
-            "es2015",
-            "stage-0"
-        ],
-        "plugins": [
-            [
+	"name": "@jiku/portal-site",
+	"version": "0.1.0",
+	"description": "Portal to all jiku content.",
+	"private": true,
+	"author": {
+		"name": "B.E. Henriksen",
+		"email": "e@jiku.ca",
+		"url": "https://jiku.ca"
+	},
+	"main": "dist/index.js",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/jiku/portal-site.git"
+	},
+	"bugs": {
+		"url": "http://github.com/jiku/portal-site/issues"
+	},
+	"scripts": {
+		"start": "cd src && npm run start",
+		"check": "npm-check && ncu",
+		"edit": "atom-beta .",
+		"test": "npm run test:ava && npm run test:xo",
+		"test:ava": "ava",
+		"test:xo": "xo",
+		"readme": "markdown-cli README.md",
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook"
+	},
+	"engines": {
+		"node": ">=4.5.0"
+	},
+	"dependencies": {
+		"babel-runtime": "^6.9.2",
+		"ramda": "^0.21.0",
+		"react": "^15.2.0",
+		"react-dom": "^15.2.0"
+	},
+	"devDependencies": {
+		"ava": "^0.16.0",
+		"babel-cli": "^6.10.1",
+		"babel-core": "^6.10.4",
+		"babel-plugin-espower": "^2.3.1",
+		"babel-plugin-transform-runtime": "^6.9.0",
+		"babel-preset-es2015": "^6.9.0",
+		"babel-preset-stage-0": "^6.5.0",
+		"babel-preset-react": "^6.11.1",
+		"xo": "^0.15.0",
+		"babelify": "^7.3.0",
+		"classnames": "^2.2.5",
+		"@kadira/storybook": "^2.5.2",
+		"console.table": "^0.7.0"
+	},
+	"ava": {
+		"files": [
+			"src/**/tests/**/*.js"
+		],
+		"source": [
+			"data/**/*.json",
+			"src/**/*.js",
+			"!src/**/tests/**/*",
+			"!dist/**/*"
+		],
+		"require": [
+			"babel-register",
+			"console.table"
+		],
+		"babel": "inherit"
+	},
+	"babel": {
+		"presets": [
+			"es2015",
+			"stage-0"
+		],
+		"plugins": [
+			[
 				"transform-runtime",
 				{
-                    "polyfill": false,
-                    "regenerator": true
-                }
-            ],
-            "espower"
-        ]
-    },
-    "keywords": [
-        "jiku",
-        "Portal",
-        "creative",
-        "outlet"
-    ],
-    "license": "MIT"
+					"polyfill": false,
+					"regenerator": true
+				}
+			],
+			"espower"
+		]
+	},
+	"keywords": [
+		"jiku",
+		"Portal",
+		"creative",
+		"outlet"
+	],
+	"license": "MIT"
 }
