@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { createElement } from 'react'
 import R from 'ramda'
-import MTRC from 'markdown-to-react-components'
+import marksy from 'marksy'
 import Loading from 'react-loading'
 
 const { PropTypes, Component } = React
 
-MTRC.configure({
-  h1: React.createClass({
-    render() {
-      return <h1 id={this.props.id} style={{fontFamily: 'jikutypeVector', fontSize: '8px', color: '#97f', textTransform: 'lowercase', padding: '2em 0em'}}>{this.props.children}</h1>
+const Markdown = marksy({
+  createElement,
+  elements: {
+    h1 ({id, children}) {
+      return <h1 id={id} style={{fontFamily: 'jikutypeVector', fontSize: '8px', color: '#97f', textTransform: 'lowercase', padding: '2em 0em'}}>{children}</h1>
     }
-  })
+  }
 })
 
 const Container = children => (<div className="panel panel-default">
@@ -25,7 +26,7 @@ const File = markdown => {
     return <Loading type='spin' color='#eee' />
   } else {
     return (<div>
-      { MTRC(markdown).tree }
+      { Markdown(markdown).tree }
     </div>)
   }
 }
