@@ -4,10 +4,8 @@ const getFile = async (filename) => {
   const file = await new Promise((resolve) => {
     resolve(Assets.getText(`${filename}`))
   })
-  console.log('Taking a break...')
-  await sleep(5000)
-  console.log('Going at it...')
-  return await file
+  await sleep(2000)
+  return file
 }
 
 Meteor.methods({
