@@ -29,7 +29,6 @@
 	},
 	"dependencies": {
 		"babel-runtime": "^6.9.2",
-		"ramda": "^0.21.0",
 		"react": "^15.2.0",
 		"react-dom": "^15.2.0"
 	},
