@@ -1,8 +1,7 @@
-import { configure } from '@kadira/storybook';
+import { configure } from '@storybook/react';
 
 function loadStories() {
-  require('../src/imports/stories/Related');
-  require('../src/imports/stories/Standard');
+  require('../stories');
 }
 
 configure(loadStories, module);
