@@ -40,7 +40,6 @@
 		"babel-preset-stage-0": "^6.5.0",
 		"babel-preset-react": "^6.11.1",
 		"babelify": "^7.3.0",
-		"classnames": "^2.2.5",
 		"@kadira/storybook": "^2.5.2",
 		"console.table": "^0.7.0"
 	},
