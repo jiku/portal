@@ -8,7 +8,6 @@
 		"email": "e@jiku.ca",
 		"url": "https://jiku.ca"
 	},
-	"main": "dist/index.js",
 	"repository": {
 		"type": "git",
 		"url": "http://github.com/jiku/portal-site.git"
