@@ -28,8 +28,8 @@
 	},
 	"dependencies": {
 		"babel-runtime": "^6.9.2",
-		"react": "^15.2.0",
-		"react-dom": "^15.2.0"
+		"react": "^16.2.0",
+		"react-dom": "^16.2.0"
 	},
 	"devDependencies": {
 		"babel-cli": "^6.10.1",
