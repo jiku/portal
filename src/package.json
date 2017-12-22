@@ -22,7 +22,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-loading": "^1.0.3",
-    "styled-components": "^2.3.3"
+    "styled-components": "^1.4.6"
   },
   "devDependencies": {
     "classnames": "^2.2.5"
