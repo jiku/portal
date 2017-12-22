@@ -18,7 +18,7 @@
 	"scripts": {
 		"start": "cd src && npm run start",
 		"check": "npm-check && ncu",
-		"edit": "atom-beta .",
+		"edit": "code-insiders .",
 		"test": "npm run test:ava && npm run test:xo",
 		"test:ava": "ava",
 		"test:xo": "xo",
