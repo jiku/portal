@@ -9,10 +9,11 @@ import createBrowserHistory from 'history/createBrowserHistory'
 const browserHistory = createBrowserHistory()
 
 const Base = ({ projects }) =>
-  <div>
+  <>
     <h2>Projects</h2>
     <ProjectList projects={ projects } />
-  </div>
+  </>
+
 
 const App = appState => (
   <div className="container">
