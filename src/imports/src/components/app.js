@@ -4,9 +4,9 @@ import R from 'ramda'
 import ProjectList from './project-list'
 import Parser from './parser'
 import { Router, Route, Switch } from 'react-router'
-import { Link } from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
 import { Menu } from './Menu'
+import { NotFound } from './NotFound'
 
 const browserHistory = createBrowserHistory()
 
@@ -14,12 +14,6 @@ const Base = ({ projects }) =>
   <>
     <h2>Projects</h2>
     <ProjectList projects={ projects } />
-  </>
-
-const NotFound = () =>
-  <>
-    <h2>Content not found!</h2>
-    <h3>Please <Link to={`/contact`}>contact</Link> if you think it's missing.</h3>
   </>
 
 const App = appState => (
