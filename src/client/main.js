@@ -22,6 +22,7 @@ const setup = async () => {
   // }, 1000)
 
   appState.projects = JSON.parse(await Asset('Projects.json'))
+  appState.menu = JSON.parse(await Asset('Menu.json'))
 
   render(appState)
 
