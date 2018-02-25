@@ -16,15 +16,29 @@ const Base = ({ projects }) =>
     <ProjectList projects={ projects } />
   </>
 
+const components = {
+  base: Base,
+  parser: Parser
+}
+
 const App = appState => (
   <div className="container">
     <h1>jiku</h1>
     <Menu items={appState.menu} />
-
     <Router history={browserHistory}>
       <Switch>
-        <Route exact path="/" render={ () => <Base projects={ appState.projects } /> } />
-        <Route exact path="/ama" render={ () => <Parser markdown={ appState.markdown } /> } />
+        {
+          appState.routes.map(r => {
+            if (r.component) {
+              const data = {}
+              r.data.map(x => data[x.key] = appState[x.value])
+              const Component = components[r.component]
+              return <Route key={`${r.id}`} exact path={`${r.url}`} render={ () => <Component {...data} /> } />
+            } else {
+              return <Route key={`${r.id}`} exact path={`${r.url}`} />
+            }
+          })
+        }
         <Route path="*" component={NotFound}/>
       </Switch>
     </Router>
