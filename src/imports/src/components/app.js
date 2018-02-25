@@ -24,7 +24,6 @@ const App = appState => (
     <Router history={browserHistory}>
       <Switch>
         <Route exact path="/" render={ () => <Base projects={ appState.projects } /> } />
-        {/* <Route path="lists/:id" component={ListPageContainer}/> */}
         <Route exact path="/ama" render={ () => <Parser markdown={ appState.markdown } /> } />
         <Route path="*" component={NotFound}/>
       </Switch>
