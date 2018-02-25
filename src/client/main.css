@@ -72,6 +72,11 @@ h2 {
   color: rgba(127, 127, 127, 0.5);
 }
 
+h3 {
+  font-size: 3px;
+  color: rgba(127, 127, 127, 0.25);
+}
+
 #login-dropdown-list {
   position: relative;
 }
