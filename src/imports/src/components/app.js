@@ -6,6 +6,7 @@ import Parser from './parser'
 import { Router, Route, Switch } from 'react-router'
 import { Link } from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
+import { Menu } from './Menu'
 
 const browserHistory = createBrowserHistory()
 
@@ -20,13 +21,6 @@ const NotFound = () =>
     <h2>Content not found!</h2>
     <h3>Please <Link to={`/contact`}>contact</Link> if you think it's missing.</h3>
   </>
-
-const Menu = ({ items }) =>
-  <div style={{ "display": "grid", "gridAutoFlow": "column" }}>
-    {items.map(i =>
-      <h2 key={i.id}><a href={`${i.url}`}>{i.name}</a></h2>
-    )}
-  </div>
 
 const App = appState => (
   <div className="container">
