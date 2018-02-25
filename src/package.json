@@ -15,13 +15,15 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.40",
     "babel-runtime": "^6.26.0",
-    "marksy": "^6.0.3",
     "escape-html": "^1.0.3",
+    "history": "^4.7.2",
+    "marksy": "^6.0.3",
     "meteor-node-stubs": "^0.3.2",
     "ramda": "^0.25.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-loading": "^1.0.3",
+    "react-router": "^4.2.0",
     "styled-components": "^1.4.6"
   }
 }
