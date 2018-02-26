@@ -1,6 +1,6 @@
 import React from 'react'
 import R from 'ramda'
-import Button from './button'
+import Button from '../Button'
 
 const Container = children => (<div className="panel panel-default">
   <div className="panel-body">
@@ -21,6 +21,4 @@ const ListItem = ({ id, image, name, description, url, tags }) => (<div key={id}
   <div className="tags">{tags}</div>
 </div>)
 
-const ProjectList = R.compose(Container, List, R.map(ListItem), R.prop('projects'))
-
-export default ProjectList
+export const ProjectList = R.compose(Container, List, R.map(ListItem), R.prop('projects'))

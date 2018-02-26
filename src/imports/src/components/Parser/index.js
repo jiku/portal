@@ -31,7 +31,5 @@ const File = markdown => {
   }
 }
 
-// const Parser = R.compose(Container, File, R.props(['loading', 'markdown']))
-const Parser = R.compose(Container, File, R.prop('markdown'))
-
-export default Parser
+// export const Parser = R.compose(Container, File, R.props(['loading', 'markdown']))
+export const Parser = R.compose(Container, File, R.prop('markdown'))
