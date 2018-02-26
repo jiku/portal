@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import R from 'ramda'
 import { Router, Route, Switch } from 'react-router'
 import createBrowserHistory from 'history/createBrowserHistory'
-import { Menu } from './Menu'
-import { NotFound } from './NotFound'
-import Components from './'
+import { Menu } from '../Menu'
+import { NotFound } from '../NotFound'
+import Components from '../'
 
 const browserHistory = createBrowserHistory()
 
