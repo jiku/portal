@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import R from 'ramda'
-import App from '../imports/src/components/App'
+import App from '../imports/app'
 import Asset from '../imports/asset'
 
 let appState = {

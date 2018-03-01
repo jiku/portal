@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "start": "meteor --port 6743",
-    "start:edge": "npm start -- --release=1.6.2-beta.10",
+    "start:edge": "npm start -- --release=1.6.2-beta.9",
     "start:edge:offsite": "npm run start:edge -- METEOR_WAREHOUSE_URLBASE=https://d3fm2vapipm3k9.cloudfront.net",
     "bump": "npm start -- update",
     "bump:edge": "npm run start:edge -- update",
@@ -15,16 +15,19 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.40",
     "babel-runtime": "^6.26.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-loading": "^1.0.3",
+    "graphql": "^0.13.1",
+    "react-apollo": "beta",
+    "apollo-boost": "^0.1.1",
+    "styled-components": "^1.4.6",
     "escape-html": "^1.0.3",
     "history": "^4.7.2",
     "marksy": "^6.0.3",
     "meteor-node-stubs": "^0.3.2",
-    "ramda": "^0.25.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-loading": "^1.0.3",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "styled-components": "^1.4.6"
+    "ramda": "^0.25.0"
   }
 }
