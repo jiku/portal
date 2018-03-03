@@ -4,9 +4,9 @@ import { gql } from 'apollo-boost'
 import { withRouter } from 'react-router-dom'
 
 const updateLocation = ({ path, location, mutate }) => e =>
-	mutate({ variables: { location: `${path}` }})
+  mutate({ variables: { location: `${path}` }})
 
-  const Button = ({ data: { user }, mutate, history }) => {
+const Button = ({ data: { user }, mutate, history }) => {
   mutate({ variables: { location: `${history.location.pathname}` }})
   return null
 }

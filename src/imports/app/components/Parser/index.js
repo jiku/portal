@@ -1,9 +1,8 @@
 import React, { createElement } from 'react'
-import R from 'ramda'
+import { graphql, compose } from 'react-apollo'
+import { gql } from 'apollo-boost'
 import marksy from 'marksy'
 import Loading from 'react-loading'
-
-const { PropTypes, Component } = React
 
 const Markdown = marksy({
   createElement,
@@ -14,22 +13,21 @@ const Markdown = marksy({
   }
 })
 
-const Container = children => (<div className="panel panel-default">
-  <div className="panel-body">
-    { children }
-  </div>
-</div>)
+const Component = ({ data: { loading, parser }}) =>
+  !loading ? (
+    <div>
+      { Markdown(parser.markdown).tree }
+    </div>
+  ) : <Loading type='spin' color='#eee' />
 
-// const File = (loading, markdown) => (<div>
-const File = markdown => {
-  if (!markdown) {
-    return <Loading type='spin' color='#eee' />
-  } else {
-    return (<div>
-      { Markdown(markdown).tree }
-    </div>)
+const GET_MARKDOWN = gql`
+  {
+    parser @client {
+      markdown
+    }
   }
-}
+`
 
-// export const Parser = R.compose(Container, File, R.props(['loading', 'markdown']))
-export const Parser = R.compose(Container, File, R.prop('markdown'))
+export const Parser = compose(
+	graphql(GET_MARKDOWN)
+)(Component)

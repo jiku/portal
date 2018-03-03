@@ -1,3 +1,4 @@
+import Asset from './asset'
 import ApolloClient from 'apollo-boost'
 
 export const client = new ApolloClient({
@@ -24,8 +25,32 @@ export const client = new ApolloClient({
     resolvers: {
       Query: {
         connection: (_, __, { cache }) => {
-          const { connection } = cache.readQuery({ query: GET_CONNECTION }) // cache.readQuery reads cache before updating it...
+          const { connection } = cache.readQuery({ query: GET_CONNECTION })
           return `connection? ${connection}`
+        },
+        projects: async (_, __, { cache }) => {
+          try {
+            const projects = JSON.parse(await Asset('Projects.json'))
+            return projects.map(x => Object.assign(x, { __typename: `Project` }))
+          } catch(e) { console.log(e) }
+        },
+        routes: async (_, __, { cache }) => {
+          try {
+            const routes = JSON.parse(await Asset('Routes.json'))
+            return routes.map(x => Object.assign({ component: null, data: null }, x, { __typename: `Route` }))
+          } catch(e) { console.log(e) }
+        },
+        menu: async (_, __, { cache }) => {
+          try {
+            const menu = JSON.parse(await Asset('Menu.json'))
+            return menu.map(x => Object.assign(x, { __typename: `Menu` }))
+          } catch(e) { console.log(e) }
+        },
+        parser: async (_, __, { cache }) => {
+          try {
+            const markdown = await Asset(`Sweetie.md`) // TODO: !Hardcode
+            return Object.assign({ markdown }, { __typename: `Markdown` })
+          } catch(e) { console.log(e) }
         },
       },
       Mutation: {
@@ -61,6 +86,6 @@ export const client = new ApolloClient({
           return null
         }
       }
-    }	
+    }
   }
 })
