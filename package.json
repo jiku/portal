@@ -1,5 +1,5 @@
 {
-  "name": "@jiku/portal-site",
+  "name": "@jiku/portal-site-harness",
   "version": "0.1.0",
   "description": "Portal to all jiku content.",
   "private": true,
