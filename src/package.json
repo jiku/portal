@@ -2,6 +2,12 @@
   "name": "@jiku/portal-site",
   "version": "0.1.0",
   "private": true,
+  "main2": ".meteor/local/build/main.js",
+  "main": "imports/app/index.js",
+  "meteor": {
+    "mainModule": "imports/app/index.js",
+    "testModule": false
+  },
   "scripts": {
     "start": "meteor --port 6743",
     "start:edge": "npm start -- --release=1.6.2-beta.9",
