@@ -6,6 +6,7 @@ import { Connection } from '../Connection'
 import { NotFound } from '../NotFound'
 import React from 'react'
 import { Router, Route, Switch } from 'react-router'
+import { View } from 'react-native'
 import createBrowserHistory from 'history/createBrowserHistory'
 import { graphql, compose } from 'react-apollo'
 import { gql } from 'apollo-boost'
@@ -14,7 +15,7 @@ const browserHistory = createBrowserHistory()
 
 const Layout = ({ data: { loading, routes, menu }}) =>
   !loading ? (
-    <div className="container">
+    <View>
       <h1>jiku</h1>
       <Connection />
       <Menu items={menu} />
@@ -39,7 +40,7 @@ const Layout = ({ data: { loading, routes, menu }}) =>
           </Switch>
         </>
       </Router>
-    </div>
+    </View>
   ) : null
 
 const GET_LAYOUT = gql`
