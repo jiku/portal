@@ -1,5 +1,6 @@
 {
   "name": "@jiku/portal-site",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "meteor --port 6743",
