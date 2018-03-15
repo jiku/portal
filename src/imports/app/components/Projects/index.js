@@ -6,10 +6,10 @@ import Loading from 'react-loading'
 
 const Component = ({ data: { loading, projects }}) =>
   !loading ? (
-    <>
+    <div>
       <h2>Projects</h2>
       <ProjectList projects={ projects } />
-    </>
+    </div>
   ) : <Loading type='spin' color='#eee' />
 
 const GET_PROJECTS = gql`

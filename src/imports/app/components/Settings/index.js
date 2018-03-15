@@ -6,11 +6,11 @@ const settingHandler = (setting, mutate) => e =>
   mutate({ variables: { setting: { __typename: setting.__typename, id: setting.id, value: !setting.value }}})
 
 const Toggles = ({ data: { settings }, mutate }) =>
-  <>
+  <div>
     { settings.map((s, i) =>
       <button key={`${i}`} onClick={settingHandler(s, mutate)}>{`${s.id}: ${s.value}`}</button>
     )}
-  </>
+  </div>
 
 const GET_SETTINGS = gql`
   {

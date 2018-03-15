@@ -10,7 +10,7 @@ meteorInstall({
 })
 
 const init = async () => {
-  const { App } = await import('/imports/app')
+  const { App } = await import('/imports/app/rn')
 } 
 
 Meteor.startup(() => init())
