@@ -1,4 +1,6 @@
+import { Button } from '../Button2'
 import React from 'react'
+import { View } from 'react-native'
 import { graphql, compose } from 'react-apollo'
 import { gql } from 'apollo-boost'
 
@@ -6,11 +8,11 @@ const settingHandler = (setting, mutate) => e =>
   mutate({ variables: { setting: { __typename: setting.__typename, id: setting.id, value: !setting.value }}})
 
 const Toggles = ({ data: { settings }, mutate }) =>
-  <div>
-    { settings.map((s, i) =>
-      <button key={`${i}`} onClick={settingHandler(s, mutate)}>{`${s.id}: ${s.value}`}</button>
-    )}
-  </div>
+  <View>
+  { settings.map((s, i) =>
+    <Button key={`${i}`} onPress={settingHandler(s, mutate)} title={`${s.id}: ${s.value}`} />
+  )}
+  </View>
 
 const GET_SETTINGS = gql`
   {
