@@ -6,21 +6,21 @@ import { Menu } from '../Menu'
 import { Connection } from '../Connection'
 import { NotFound } from '../NotFound'
 import React, { Fragment } from 'react'
-import { Router, Route, Switch } from 'react-router'
 import { View, Text, StyleSheet } from 'react-native'
-import createMemoryHistory from 'history/createMemoryHistory'
+import { Switch, Route } from 'react-router'
+import { createMemoryHistory } from 'history'
 import { graphql, compose } from 'react-apollo'
 import { gql } from 'apollo-boost'
 
 const history = createMemoryHistory()
 
-const Layout = ({ data: { loading, routes, menu }}) =>
+const Layout = ({ data: { loading, routes, menu }, Router }) =>
   !loading ? (
-    <View style={styles.layout}>
-      <Header text={`jiku`}/>
-      <Connection />
-      <Menu items={menu} />
-      <Router history={history}>
+    <Router initialEntries={["/"]} history={history}>
+      <View style={styles.layout}>
+        <Header text={`jiku`}/>
+        <Connection />
+        <Menu items={menu} />
         <Fragment>
           <User />
           <Switch>
@@ -37,11 +37,12 @@ const Layout = ({ data: { loading, routes, menu }}) =>
               })
             : null }
             <Route key={`settings`} exact path={`/settings`} render={ () => <Settings /> } />
+            {/* <Route key={`connection`} exact path={`/connection`} component={Connection} /> */}
             <Route path="*" component={NotFound}/>
           </Switch>
         </Fragment>
-      </Router>
-    </View>
+      </View>
+    </Router>
   ) : null
 
 const GET_LAYOUT = gql`

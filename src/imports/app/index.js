@@ -17,6 +17,8 @@ import { Static } from './components/Static'
 // const ok = require('./gridbg.png') || require('/gridbg.png')
 
 // HACK: Meteor context passed to App/client for React Native to get Meteor assets (through react-native-meteor).
-export const App = params => <ApolloProvider client={client(params)}><Layout /></ApolloProvider>
+export const App = ({ configuration, context }) => {
+	return <ApolloProvider client={client(configuration.apollo)}><Layout Router={context.Router} /></ApolloProvider>
+}
 
 export { Layout, Header, Menu, LinkExternal, Projects, Parser, Button, Connection, Settings, NotFound, Static }
