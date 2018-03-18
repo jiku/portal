@@ -37,7 +37,6 @@ const Layout = ({ data: { loading, routes, menu }, Router }) =>
               })
             : null }
             <Route key={`settings`} exact path={`/settings`} render={ () => <Settings /> } />
-            {/* <Route key={`connection`} exact path={`/connection`} component={Connection} /> */}
             <Route path="*" component={NotFound}/>
           </Switch>
         </Fragment>
