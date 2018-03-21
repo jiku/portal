@@ -1,24 +1,36 @@
-import React, { createElement } from 'react'
+import { Loader } from '../Indicators/Loader'
+import Markdown from '../../../utils/markdown/'
+import React from 'react'
 import { graphql, compose } from 'react-apollo'
 import { gql } from 'apollo-boost'
-import marksy from 'marksy'
-import Loading from 'react-loading'
+import { View, Text, ActivityIndicator } from 'react-native'
 
-const Markdown = marksy({
-  createElement,
-  elements: {
-    h1 ({id, children}) {
-      return <h1 id={id} style={{fontFamily: 'jikutypeVector', fontSize: '8px', color: '#97f', textTransform: 'lowercase', padding: '2em 0em'}}>{children}</h1>
-    }
+const markdownStyles = {
+  heading1: {
+    fontFamily: 'jikutype-001-Vector',
+    fontSize: 3,
+    color: 'rgba(153, 119, 255, 1)'
+  },
+  link: {
+    color: 'rgba(119, 255, 153, 1)',
+  },
+  mailTo: {
+    color: 'rgba(119, 255, 153, 1)',
+  },
+  text: {
+    color: '#777',
   }
-})
+}
 
 const Component = ({ data: { loading, parser }}) =>
-  !loading ? (
-    <div>
-      { Markdown(parser.markdown).tree }
-    </div>
-  ) : <Loading type='spin' color='#eee' />
+  !loading?
+    <View>
+      <Markdown styles={markdownStyles}>{ parser.markdown }</Markdown>
+    </View>
+  :
+    <View>
+      <Loader />
+    </View>
 
 const GET_MARKDOWN = gql`
   {
