@@ -36,6 +36,6 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "simple-markdown": "^0.3.3",
-    "styled-components": "^1.4.6"
+    "styled-components": "^3.2.3"
   }
 }
