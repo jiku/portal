@@ -1,66 +1,121 @@
 import React from 'react'
+import { View, TouchableOpacity, StyleSheet } from 'react-native'
+import { withRouter } from 'react-router'
+import Svg, { G, Path } from 'react-native-svg'
+// import Svg, { Path, Circle } from '/Users/test/Documents/dev/Projects/jiku/Portal/native/node_modules/react-native-svg/index'
+import styled from 'styled-components/native'
 import R from 'ramda'
-import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const Group = ({ children, ...props }) =>
+  <G
+    fillOpacity="0.3"
+    fill="#eee"
+    fillRule="nonzero"
+    strokeOpacity="0.6"
+    stroke="#777"
+    strokeWidth="1"
+    strokeLineCap="butt"
+    strokeLineJoin="miter"
+    strokeMiterLimit="10"
+    strokeDashOffset="0"
+    mixBlendMode="normal"
+    {...props}>
+    {children}
+  </G>
+
+const TopSVG = () =>
+  <View style={[styles.layer, styles.top]}>
+    <Svg style={[styles.svg, styles.svgTop]}>
+      <Group>
+        <Path
+          d="M 0 25 Q 25 0 50 0 L 187.5 0 Q 200 6.25 200 12.5 L 200 25 Q 175 50 150 50 L 12.5 50 Q 0 43.75 0 37.5 Z"/>
+      </Group>
+    </Svg>
+  </View>
+
+const BottomSVG = () =>
+  <View style={[styles.layer, styles.top]}>
+    <Svg style={styles.svg}>
+      <Group
+        fillOpacity="0.1"
+        fill="#777"
+        strokeOpacity="0.3"
+        stroke="#333">
+        <Path
+        d="M 0 25 Q 25 0 50 0 L 187.5 0 Q 200 6.25 200 12.5 L 200 25 Q 175 50 150 50 L 12.5 50 Q 0 43.75 0 37.5 Z" />
+      </Group>
+    </Svg>
+  </View>
+
+const Wrapper = styled.View`
   display: flex;
   justify-content: center;
-  // align-items: center;
-  position: relative;
-  width: auto;
-  height: auto;
-  padding: 3em 3em 1em 3em;
+  align-items: center;
+  padding-vertical: 30px;
 
+  /*
   cursor: pointer;
 
   &.inactive {
     opacity: 0.5;
     cursor: default;
   }
-`;
-
-const Text = styled.span`
+  */`
+const Title = styled.View`
+  position: absolute;
   z-index: 3;
-  text-align: center;
-  text-shadow: rgba(0, 0, 0, .3) 0 0 .05em;
-  text-size-adjust: 100%;
-  text-transform: uppercase;
-  // font: 1em 'jikutypeVector';
-  // font: 1em stage01;
-  font: 1em Electrolize;
-  transition: all 0.2s ease 0s;
-
+  
+  /*
   perspective: 1000px;
   perspective-origin: 100px 46px;
-  transform-origin: 100px 46px;
-
+  transform-origin: 100px 46px; 
   transform-origin: 0 0;
   :hover:not(.inactive) > &, .active:not(.inactive) > & {
-    color: #3f9;
-    text-shadow: rgba(0, 0, 0, 1) 0 0 .05em;
     transform: translate(0, -9px);
     transition-delay: 0.1s;
   }
+  */`
+const Text = styled.Text`
+  font-family: 'jikutype-001-Vector';
+  text-align: center;
+  font-size: 3;
+  color: 'rgba(255, 255, 255, 1)';
+  text-shadow-radius: 2;
+  text-shadow-offset: { width: 1, height: 1 };
+  text-shadow-color: 'rgba(0, 0, 0, .3)';
 
-  color: #fff;
+  /*
+  font: 1em stage01;
+  font: 1em Electrolize;
+  text-size-adjust: 100%;
+  text-transform: uppercase;
+  */
 
-`;
-
-const Top = styled.span`
+  /*
+  transition: all 0.2s ease 0s;
+  :hover:not(.inactive) > &, .active:not(.inactive) > & {
+    color: 'rgba(119, 255, 153, 1)';
+    text-shadow-color: 'rgba(0, 0, 0, 1)';
+    transition-delay: 0.1s;
+  }
+  */`
+const Top = styled(TopSVG)`
   position: absolute;
-  width: 100%;
   z-index: 2;
+
+  /*
+  width: 100%;
 
   :hover:not(.inactive) > &, .active:not(.inactive) > & {
     transform: translate(0, -8px);
   }
-`;
-
-const Bottom = styled.span`
+  */`
+const Bottom = styled(BottomSVG)`
   position: absolute;
-  width: 100%;
   z-index: 1;
 
+  /*
+  width: 100%;
   perspective: 1000px;
   perspective-origin: 100px 40px;
   transform-origin: 100px 40px;
@@ -69,84 +124,51 @@ const Bottom = styled.span`
   :hover:not(.inactive) > &, .active:not(.inactive) > & {
     transform: translate(11px, -8px);
   }
-`;
+  */`
 
-const StyleTopSVG = styled.g`
-  fill-opacity: 0.3;
-  fill: #eee;
-  fill-rule: nonzero;
-  stroke-opacity: 0.6;
-  stroke: #777;
-  stroke-width: 1;
-  stroke-linecap: butt;
-  stroke-linejoin: miter;
-  stroke-miterlimit: 10;
-  stroke-dashoffset: 0;
-  mix-blend-mode: normal;
-`;
+const styles = StyleSheet.create({
+  title: {
+    textShadowRadius: 2,
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowColor: `rgba(0, 0, 0, .3)`
+  },
+  center: {
+    display: `flex`, justifyContent: `center`, alignContent: `center`
+  },
+  center2: {
+    display: `flex`, justifyContent: `center`, alignContent: `center`
+  },
+  layer: {
+    position: `absolute`
+  },
+  svgTop: {
+    top: 7,
+    width: 220,
+    height: 55
+  },
+  svg: {
+    width: 200,
+    height: 50
+  },
+  top: { 
+    zIndex: 2//, padding: 10
+  },
+  bottom: { // TODO: Add animation somehow, with(out) s-c/n
+    zIndex: 1//, padding: 5
+  },
+})
 
-const StyleBottomSVG = styled.g`
-  fill-opacity: 0.1;
-  fill: #777;
-  fill-rule: nonzero;
-  stroke-opacity: 0.3;
-  stroke: #333;
-  stroke-width: 1;
-  stroke-linecap: butt;
-  stroke-linejoin: miter;
-  stroke-miterlimit: 10;
-  stroke-dashoffset: 0;
-  mix-blend-mode: normal;
-`;
+const clickHandler = (history, path) => e => history.push(path)
 
-const Container = children => (<div className="panel panel-default">
-  <div className="panel-body">
-    { children }
-  </div>
-</div>)
+const Button = withRouter(({ name, url, history }) =>
+  <TouchableOpacity onPress={clickHandler(history, url)}>
+    <Wrapper>
+      <Title><Text style={[ styles.title ]}>{ name.toLowerCase() }</Text></Title>
+      <Top/>
+      <Bottom/>
+    </Wrapper>
+  </TouchableOpacity>)
 
-/*
-const Button = ({name, url, button}) => {
-    console.log(name, url, button)
-  return (<div>
-    <a href={url}>{name}</a>
-    {button}
-  </div>)
-}
-*/
-
-const TopSVG = () => (
-  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-500,-100,1000,200">
-    <StyleTopSVG>
-      <path d="M-306.4,-95.2c3.2,-2.4 10.4,-4.8 14.4,-4.8l784,0c4,0 8,4 8,8l0,34c0,4 -3.2,10.4 -6.4,12.8l-187.2,140.4c-3.2,2.4 -10.4,4.8 -14.4,4.8l-784,0c-4,0 -8,-4 -8,-8l0,-34c0,-4 3.2,-10.4 6.4,-12.8z" />
-    </StyleTopSVG>
-  </svg>
-)
-
-const BottomSVG = () => (
-  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-500,-100,1000,200">
-    <StyleBottomSVG>
-      <path d="M-306.4,-95.2c3.2,-2.4 10.4,-4.8 14.4,-4.8l784,0c4,0 8,4 8,8l0,34c0,4 -3.2,10.4 -6.4,12.8l-187.2,140.4c-3.2,2.4 -10.4,4.8 -14.4,4.8l-784,0c-4,0 -8,-4 -8,-8l0,-34c0,-4 3.2,-10.4 6.4,-12.8z" />
-    </StyleBottomSVG>
-  </svg>
-)
-
-const Button = ({ name, url }) => (<div>
-  <a href={url}>
-  <Wrapper>
-    <Text>
-      { name }
-    </Text>
-    <Top>
-      <TopSVG />
-    </Top>
-    <Bottom>
-      <BottomSVG />
-    </Bottom>
-  </Wrapper>
-  </a>
-</div>)
-
-const Parser = R.compose(Container, Button, R.prop('props'))
+const Parser = R.compose(Button, R.prop('props'))
 
 export default Parser

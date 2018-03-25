@@ -1,15 +1,16 @@
 import { ProjectList } from './ProjectList'
+import { Loader } from '../Indicators/Loader'
 import React from 'react'
 import { graphql, compose } from 'react-apollo'
 import { gql } from 'apollo-boost'
-import { Loader } from '../Indicators/Loader'
+import { View, Text } from 'react-native'
 
 const Component = ({ data: { loading, projects }}) =>
   !loading ? (
-    <div>
-      <h2>Projects</h2>
+    <View>
+      <Text>Projects</Text>
       <ProjectList projects={ projects } />
-    </div>
+    </View>
   ) : <Loader />
 
 const GET_PROJECTS = gql`

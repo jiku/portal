@@ -1,24 +1,34 @@
-import React from 'react'
-import R from 'ramda'
 import Button from '../Button'
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+import R from 'ramda'
 
-const Container = children => (<div className="panel panel-default">
-  <div className="panel-body">
-  </div>
-  <div className="panel-body">
+const Container = children =>
+  <View>
     {children}
-  </div>
-</div>)
+  </View>
 
-const List = children => (<div>
+const List = children =>
+<View>
   {children}
-</div>)
+</View>
 
-const ListItem = ({ id, image, name, description, url, tags }) => (<div key={id}>
-  {/*<div><a href={url}>{image}</a></div>*/}
-  <Button props={{name, url}} />
-  <div>{description}</div>
-  <div className="tags">{tags}</div>
-</div>)
+const styles = StyleSheet.create({
+  basic: {
+    display: `flex`
+  },
+  center: {
+    justifyContent: `center`,
+    alignItems: `center`
+  }
+})
+
+const ListItem = ({ id, image, name, description, url, tags }) =>
+  <View key={id} style={[styles.basic, styles.center]}>
+    {/*<View><Link href={url}>{image}</Link></View>*/}
+    <Button props={{name, url}} />
+    <Text>{description}</Text>
+    <Text>{tags}</Text>
+  </View>
 
 export const ProjectList = R.compose(Container, List, R.map(ListItem), R.prop('projects'))
