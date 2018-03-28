@@ -1,9 +1,0 @@
-@font-face {
-  font-family: 'jikutype-001-Vector';
-  src:  url('jikutype-001-Vector.woff2') format('woff2'),
-        url('jikutype-001-Vector.woff') format('woff');
-}
-
-body {
-  background: rgba(0, 0, 0, .03) url("/gridbg_glow_20.png") repeat scroll 50% 0% / auto padding-box border-box;
-}

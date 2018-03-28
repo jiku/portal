@@ -1,5 +1,5 @@
 import { Loader } from '../Indicators/Loader'
-import Markdown from '../../../utils/markdown/'
+import { MarkdownView as Markdown } from 'react-native-markdown-view'
 import React from 'react'
 import { graphql, compose } from 'react-apollo'
 import { gql } from 'apollo-boost'

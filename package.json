@@ -1,5 +1,5 @@
 {
-  "name": "@jiku/portal-site-harness",
+  "name": "@jiku/portal-harness",
   "version": "0.1.0",
   "description": "Portal to all jiku content.",
   "private": true,
@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/jiku/portal-site.git"
+    "url": "http://github.com/jiku/portal.git"
   },
   "bugs": {
-    "url": "http://github.com/jiku/portal-site/issues"
+    "url": "http://github.com/jiku/portal/issues"
   },
   "scripts": {
     "start": "cd src && npm run start",
