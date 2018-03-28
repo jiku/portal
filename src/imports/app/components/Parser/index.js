@@ -3,7 +3,7 @@ import Markdown from '../../../utils/markdown/'
 import React from 'react'
 import { graphql, compose } from 'react-apollo'
 import { gql } from 'apollo-boost'
-import { View, Text, ActivityIndicator } from 'react-native'
+import { View, Text, SectionList, ActivityIndicator } from 'react-native'
 
 const markdownStyles = {
   heading1: {
@@ -24,9 +24,12 @@ const markdownStyles = {
 
 const Component = ({ data: { loading, parser }}) =>
   !loading?
-    <View>
-      <Markdown styles={markdownStyles}>{ parser.markdown }</Markdown>
-    </View>
+    <SectionList
+      renderItem={({item}) => <View><Markdown styles={markdownStyles}>{ item }</Markdown></View>}
+      sections={[
+        {data: [parser.markdown], title: 'AMA'}
+      ]}
+    />
   :
     <View>
       <Loader />
