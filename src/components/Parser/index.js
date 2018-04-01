@@ -27,7 +27,7 @@ const Component = ({ data: { loading, parser }}) =>
     <SectionList
       renderItem={({item}) => <View><Markdown styles={markdownStyles}>{ item }</Markdown></View>}
       sections={[
-        {data: [parser.markdown], title: 'AMA'}
+        { keyExtractor: (item, index) => `${item}:${index}`, data: [parser.markdown], title: 'AMA'}
       ]}
     />
   :
