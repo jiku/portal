@@ -9,7 +9,7 @@ const toggleHandler = (connection, mutate) => e =>
 
 const Component = ({ data: { loading, connection }, mutate }) =>
 !loading ? (
-	<Button containerStyle={styles.container} contentStyle={styles.content} onPress={toggleHandler(connection, mutate)} title={connection.online ? `OK!` : `!OK`}/>
+	<Button containerStyle={styles.container} contentStyle={styles.content} onPress={toggleHandler(connection, mutate)} title={connection.online ? `\uf0c1` : `\uf127`}/>
 ) : null
 
 const styles = StyleSheet.create({
@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
   },
   content: {
     color: 'rgba(153, 255, 119 ,1)',
-    fontFamily: 'jikutype-001-Vector',
-    fontSize: 3,
+    fontFamily: 'awesome',
+    fontSize: 30,
   }
 })
 
