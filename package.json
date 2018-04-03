@@ -24,7 +24,7 @@
     "build-storybook": "build-storybook"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">= 9"
   },
   "dependencies": {
     "react": "^16.3.0",
