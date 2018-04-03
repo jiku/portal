@@ -16,10 +16,6 @@
     "url": "http://github.com/jiku/portal/issues"
   },
   "scripts": {
-    "start": "cd src && npm run start",
-    "check": "npm-check && ncu",
-    "edit": "code-insiders .",
-    "readme": "markdown-cli README.md",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
